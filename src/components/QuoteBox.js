@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../scss/qouteBox.scss';
 
 class QuoteBox extends Component {
-  render() {
-    return (
+    render() {
+        return (
             <div id="quote-box">
-                <i className="fas fa-mobile-alt"></i>
                 <div className="quote-text">
-                    <i className="fa fa-quote-left"> </i><span id="text"></span>
+                    <i className="fa fa-quote-left"> </i><span id="text">Life isn’t about getting and having, it’s about giving and being.</span>
                 </div>
                 <div className="quote-author">
-                    - <span id="author"></span>
+                    - <span id="author">Kevin Kruse</span>
                 </div>
                 <div className="buttons">
                     <a className="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
@@ -22,8 +21,8 @@ class QuoteBox extends Component {
                     <button className="button" id="new-quote">New quote</button>
                 </div>
             </div>
-    );
-  }
+        );
+    }
 }
 
 export default QuoteBox;
