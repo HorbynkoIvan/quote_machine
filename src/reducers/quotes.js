@@ -1,4 +1,4 @@
-import {FETCH_QOUTES_START, FETCH_PHONES_SUCCESS, FETCH_PHONES_FAILURE} from "../actionTypes";
+import {FETCH_QOUTES_START, FETCH_QOUTES_SUCCESS, FETCH_QOUTES_FAILURE} from "../actionTypes";
 
 const initialStates = {};
 

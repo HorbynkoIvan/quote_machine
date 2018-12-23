@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './scss/common.scss';
 
 import QuoteBox from './components/QuoteBox';
-import {fetchQuotes} from "./API";
+import {fetchQuotes} from "./actions";
 
 class App extends Component {
     constructor(props) {
@@ -13,14 +14,13 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.state = fetchQuotes()
-        debugger
+        fetchQuotes()
     }
 
     render() {
         return (
             <div id="wrapper">
-                <QuoteBox fetched = {this.state.fetched}/>
+                <QuoteBox fetched={this.state.fetched}/>
                 <div className="myLink"> by <a href="https://github.com/HorbynkoIvan/quote_machine_react">DidIvan</a>
                 </div>
             </div>
@@ -28,4 +28,12 @@ class App extends Component {
     }
 }
 
-export default App;
+/*const mapStateToProps = (state) => ({
+    return
+});*/
+
+const mapDispatchToProps = {
+    fetchQuotes
+};
+
+export default connect(null, mapDispatchToProps)(App);
