@@ -8,9 +8,6 @@ import {fetchQuotes} from "./actions";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            fetched: {}
-        }
     }
 
     componentDidMount() {
@@ -18,9 +15,11 @@ class App extends Component {
     }
 
     render() {
+        debugger
+        console.log(this.props.quotes);
         return (
             <div id="wrapper">
-                <QuoteBox fetched={this.state.fetched}/>
+                <QuoteBox fetched = {this.props.quotes}/>
                 <div className="myLink"> by <a href="https://github.com/HorbynkoIvan/quote_machine_react">DidIvan</a>
                 </div>
             </div>
@@ -28,12 +27,12 @@ class App extends Component {
     }
 }
 
-/*const mapStateToProps = (state) => ({
-    return
-});*/
+const mapStateToProps = state => ({
+    quotes: state
+})
 
 const mapDispatchToProps = {
     fetchQuotes
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

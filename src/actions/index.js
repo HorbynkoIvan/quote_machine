@@ -10,10 +10,11 @@ const URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32b
 export const fetchQuotes = () => {
     debugger
     return (dispatch) => {
-        dispatch({type: FETCH_QOUTES_START})
+        debugger
+        //dispatch({type: FETCH_QOUTES_START});
         axios.get(URL)
             .then(response => {
-                console.log(response.data)
+                console.log(response.data);
                 debugger
                 return dispatch({type: FETCH_QOUTES_SUCCESS, payload: response.data});
             }).catch((errore) => {
