@@ -3,6 +3,14 @@ import '../scss/qouteBox.scss';
 
 class QuoteBox extends Component {
     render() {
+        console.log(`props ${this.props.fetched}`);
+        console.log(`props qoutes ${this.props.fetched.quotes}`);
+        /*this.props.fetched.quotes.map((item)=>{
+            return
+            <div className="quote-text">
+                <i className="fa fa-quote-left"> </i><span id="text">{item.quote}</span>
+            </div>
+        })*/
         return (
             <div id="quote-box">
                 <div className="quote-text">
