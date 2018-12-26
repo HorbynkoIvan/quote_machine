@@ -11,7 +11,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetchQuotes()
+        debugger
+        this.props.fetchQuotes()
     }
 
     render() {

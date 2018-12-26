@@ -3,7 +3,6 @@ import '../scss/qouteBox.scss';
 
 class QuoteBox extends Component {
     render() {
-        debugger
         console.log(`props ${this.props.fetched}`);
         console.log(`props qoutes ${this.props.fetched.quotes}`);
         let quote = this.props.fetched.quotes.quote;

@@ -11,7 +11,7 @@ export const fetchQuotes = () => {
     debugger
     return (dispatch) => {
         debugger
-        //dispatch({type: FETCH_QOUTES_START});
+        dispatch({type: FETCH_QOUTES_START});
         axios.get(URL)
             .then(response => {
                 console.log(response.data);
