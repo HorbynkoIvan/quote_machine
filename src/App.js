@@ -16,7 +16,6 @@ class App extends Component {
     }
 
     render() {
-        debugger
         console.log(this.props.quotes);
         return (
             <div id="wrapper">
