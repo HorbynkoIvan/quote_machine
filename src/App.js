@@ -4,6 +4,7 @@ import './scss/common.scss';
 
 import QuoteBox from './components/QuoteBox';
 import {fetchQuotes} from "./actions";
+import {getRandomQuote} from "./API/functions";
 
 class App extends Component {
     constructor(props) {
@@ -15,11 +16,11 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.props.quotes);
+        console.log(this.props.quote);
         debugger
         return (
             <div id="wrapper">
-                <QuoteBox fetched={this.props.quotes}/>
+                <QuoteBox fetched={this.props.quote}/>
                 <div className="myLink"> by <a href="https://github.com/HorbynkoIvan/quote_machine_react">DidIvan</a>
                 </div>
             </div>
@@ -28,7 +29,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    quotes: state
+    quote: getRandomQuote(state.quotes),
+    //quote: state.quote
 });
 
 const mapDispatchToProps = {
