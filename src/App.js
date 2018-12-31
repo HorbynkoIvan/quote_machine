@@ -4,7 +4,7 @@ import './scss/common.scss';
 
 import QuoteBox from './components/QuoteBox';
 import {fetchQuotes} from "./actions";
-import {getRandomQuote} from "./API/functions";
+//import {getRandomQuote} from "./API/functions";
 
 class App extends Component {
     constructor(props) {
