@@ -12,15 +12,16 @@ class App extends Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchQuotes()
     }
 
     render() {
-        console.log(this.props.quote);
+        console.log(this.props.quotes);
         debugger
         return (
             <div id="wrapper">
-                <QuoteBox fetched={this.props.quote}/>
+                <QuoteBox fetched={this.props.quotes}/>
                 <div className="myLink"> by <a href="https://github.com/HorbynkoIvan/quote_machine_react">DidIvan</a>
                 </div>
             </div>
@@ -29,7 +30,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    quote: getRandomQuote(state.quotes),
+    quotes: state.quotes
     //quote: state.quote
 });
 

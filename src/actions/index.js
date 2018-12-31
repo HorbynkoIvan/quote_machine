@@ -13,12 +13,10 @@ export const fetchQuotes = () => {
         axios.get(URL)
             .then(response => {
                 console.log(response.data);
-                debugger
                 return dispatch({type: FETCH_QOUTES_SUCCESS, payload: response.data});
-            }).catch((errore) => {
-            debugger
+            }).catch((error) => {
             dispatch({type: FETCH_QOUTES_FAILURE});
-            throw (errore)
+            throw (error)
 
         })
     }

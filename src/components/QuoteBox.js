@@ -3,8 +3,9 @@ import '../scss/qouteBox.scss';
 
 class QuoteBox extends Component {
     render() {
-        let quote = this.props.fetched.quote.quote;
-        let author = this.props.fetched.quote.author;
+        debugger
+        let quote = this.props.fetched.quotes;
+        let author //= this.props.fetched.quote.author;
         return (
             <div id="quote-box">
                 <div className="quote-text">
