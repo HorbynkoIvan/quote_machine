@@ -5,15 +5,24 @@ class QuoteBox extends Component {
     render() {
         debugger
         let quote = this.props.fetched.quotes;
-        let author //= this.props.fetched.quote.author;
+        // if(!quote || !quote.length) return;
+        let quotesLength = quote.length;
+        let randomIndex = Math.floor(Math.random() * quotesLength);
+        let author = quote.map((item, randomIndex) => {
+            return (
+                <div>
+                    <div className="quote-text">
+                        <i className="fa fa-quote-left"> </i><span id="text">{item.quote}</span>
+                    </div>
+                    <div className="quote-author">
+                        - <span id="author">{item.author}</span>
+                    </div>
+                </div>
+            )
+        })
         return (
             <div id="quote-box">
-                <div className="quote-text">
-                    <i className="fa fa-quote-left"> </i><span id="text">{quote}</span>
-                </div>
-                <div className="quote-author">
-                    - <span id="author">{author}</span>
-                </div>
+                {author[randomIndex]}
                 <div className="buttons">
                     <a className="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
                         <i className="fa fa-twitter"></i>

@@ -12,13 +12,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchQuotes()
     }
 
     render() {
         console.log(this.props.quotes);
-        debugger
         return (
             <div id="wrapper">
                 <QuoteBox fetched={this.props.quotes}/>
