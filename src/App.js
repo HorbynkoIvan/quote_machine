@@ -29,7 +29,6 @@ class App extends Component {
 
 const mapStateToProps = state => ({
     quotes: state.quotes
-    //quote: state.quote
 });
 
 const mapDispatchToProps = {
