@@ -2,7 +2,8 @@ import axios from 'axios';
 import {
     FETCH_QOUTES_START,
     FETCH_QOUTES_SUCCESS,
-    FETCH_QOUTES_FAILURE
+    FETCH_QOUTES_FAILURE,
+    SET_NEXT_QOUTE
 } from "../actionTypes";
 
 const URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
@@ -22,3 +23,9 @@ export const fetchQuotes = () => {
     }
 
 };
+
+export const setNextQuote=()=>{
+    return {
+        type: SET_NEXT_QOUTE
+    }
+}
