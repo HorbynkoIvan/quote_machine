@@ -17,6 +17,7 @@ class App extends Component {
 
     render() {
         console.log(this.props.quotes);
+        debugger
         return (
             <div id="wrapper">
                 <QuoteBox fetched={this.props.quotes}/>
@@ -27,8 +28,8 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    quotes: state.quotes
+const mapStateToProps = store => ({
+    quotes: store.quotes
 });
 
 const mapDispatchToProps = {

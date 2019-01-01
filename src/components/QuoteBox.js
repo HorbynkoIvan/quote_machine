@@ -9,10 +9,16 @@ class QuoteBox extends Component {
     }
 
     render() {
-        let quote = getRandomQuote(this.props.fetched.quotes);
+        debugger
+        let quote = this.props.fetched;
         return (
             <div id="quote-box">
-                {quote}
+                <div className="quote-text">
+                    <i className="fa fa-quote-left"> </i><span id="text">{quote.quote}</span>
+                </div>
+                <div className="quote-author">
+                    - <span id="author">{quote.author}</span>
+                </div>
                 <div className="buttons">
                     <a className="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
                         <i className="fa fa-twitter"></i>
