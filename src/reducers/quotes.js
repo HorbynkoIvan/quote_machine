@@ -12,7 +12,8 @@ export default (state = initialStates, action) => {
             let quote = getRandomQuote(action.payload);
             console.log("quote " + quote)
             debugger
-            return {...state, quote};
+           //return Object.assign({}, {state}, {quote});
+        return {...state, ...quote};
         /*  let temp = {...state, quotes: action.payload}
           return temp.quotes;*/
         //return Object.assign(state, action.payload);
