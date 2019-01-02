@@ -1,4 +1,4 @@
-import {FETCH_QOUTES_START, FETCH_QOUTES_SUCCESS, FETCH_QOUTES_FAILURE} from "../actionTypes";
+import {FETCH_QUOTES_START, FETCH_QUOTES_SUCCESS, FETCH_QUOTES_FAILURE, SET_NEXT_QUOTE} from "../actionTypes";
 import {getRandomQuote} from "../API/functions";
 
 const initialStates = {
@@ -8,15 +8,14 @@ const initialStates = {
 
 export default (state = initialStates, action) => {
     switch (action.type) {
-        case FETCH_QOUTES_SUCCESS:
+        case FETCH_QUOTES_SUCCESS:
             let quote = getRandomQuote(action.payload);
-            console.log("quote " + quote)
-            debugger
-           //return Object.assign({}, {state}, {quote});
-        return {...state, ...quote};
+            return {...state, ...quote};
         /*  let temp = {...state, quotes: action.payload}
           return temp.quotes;*/
         //return Object.assign(state, action.payload);
+        case SET_NEXT_QUOTE:
+            
         default:
             return state;
     }
