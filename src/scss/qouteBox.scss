@@ -1,6 +1,6 @@
 #quote-box {
   background: aliceblue;
-  width: 500px;
+  width: 40%;
   padding: 40px 50px;
   display: flex;
   flex-direction: column;
@@ -36,6 +36,7 @@
     }
 
     #new-quote {
+      font-family: 'Raleway', sans-serif;
       margin-left: auto;
       width: 100px;
       height: 40px;
