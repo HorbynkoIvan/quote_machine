@@ -1,5 +1,10 @@
 import React from "react";
 
+const colors = [
+    '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50',
+    '#00bfa5', '#00c853', '#64dd17', '#aeea00', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
+];
+
 export const getRandomQuote = (obj) => {
     //debugger
     let quotesLength = obj.quotes.length;
@@ -8,8 +13,11 @@ export const getRandomQuote = (obj) => {
     return quote;
 };
 
-const colors = [
-    '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50',
-    '#00bfa5', '#00c853', '#64dd17', '#aeea00', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
-];
+
+export const setColor = () => {
+    let randomColor = Math.floor(Math.random() * colors.length);
+    let wrapper = document.querySelector('#wrapper');
+    let wrapper1 = document.querySelector('#wrapper');
+    let wrapper2 = document.querySelector('#wrapper');
+}
 

@@ -1,5 +1,5 @@
 import {FETCH_QUOTES_START, FETCH_QUOTES_SUCCESS, FETCH_QUOTES_FAILURE, SET_NEXT_QUOTE} from "../actionTypes";
-import {getRandomQuote} from "../API/functions";
+import {getRandomQuote, setColor} from "../API/functions";
 
 const initialStates = {
     quote: '',
@@ -19,6 +19,7 @@ export default (state = initialStates, action) => {
         case SET_NEXT_QUOTE:
             debugger
             quote = getRandomQuote(action.payload);
+            setColor()
             return {...state, ...quote};
         default:
             return state;
