@@ -1,7 +1,7 @@
 import React from "react";
 
 export const getRandomQuote = (obj) => {
-    debugger
+    //debugger
     let quotesLength = obj.quotes.length;
     let randomIndex = Math.floor(Math.random() * quotesLength);
     let quote = obj.quotes[randomIndex];

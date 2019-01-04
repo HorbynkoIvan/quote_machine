@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import './scss/common.scss';
 
 import QuoteBox from './components/QuoteBox';
-import {fetchQuotes} from "./actions";
+import {fetchQuotes, setNextQuote} from "./actions";
 //import {getRandomQuote} from "./API/functions";
 
 class App extends Component {
@@ -17,10 +17,12 @@ class App extends Component {
 
     render() {
         console.log(this.props.quotes);
-        debugger
+        //debugger
         return (
             <div id="wrapper">
-                <QuoteBox fetched={this.props.quotes}/>
+                <QuoteBox
+                    fetched={this.props.quotes}
+                    setNextQuote={this.props.setNextQuote}/>
                 <div className="myLink"> by <a href="https://github.com/HorbynkoIvan/quote_machine_react">DidIvan</a>
                 </div>
             </div>
@@ -33,7 +35,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-    fetchQuotes
+    fetchQuotes, setNextQuote
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

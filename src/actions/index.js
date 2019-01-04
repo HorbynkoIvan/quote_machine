@@ -24,8 +24,9 @@ export const fetchQuotes = () => {
 
 };
 
-export const setNextQuote=()=>{
-    return {
-        type: SET_NEXT_QUOTE
+export const setNextQuote = () => {
+    return (dispatch) => {
+        dispatch({type: SET_NEXT_QUOTE})
+
     }
 }

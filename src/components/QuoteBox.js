@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
 import '../scss/qouteBox.scss';
 import {getRandomQuote} from "../API/functions";
-
+import {setNextQuote} from "../actions";
 class QuoteBox extends Component {
-    setNextQuote = (e) => {
-        e.preventDefault();
-        console.log("next")
-    }
-
     render() {
-        debugger
+        //debugger
         let quote = this.props.fetched;
         return (
             <div id="quote-box">
@@ -26,7 +21,7 @@ class QuoteBox extends Component {
                     <a className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
                         <i className="fa fa-tumblr"></i>
                     </a>
-                    <button className="button" id="new-quote" onClick={this.setNextQuote}>New quote</button>
+                    <button className="button" id="new-quote" onClick={this.props.setNextQuote}>New quote</button>
                 </div>
             </div>
         );

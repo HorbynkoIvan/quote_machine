@@ -15,7 +15,8 @@ export default (state = initialStates, action) => {
           return temp.quotes;*/
         //return Object.assign(state, action.payload);
         case SET_NEXT_QUOTE:
-            
+            debugger
+            console.log('nextaction')
         default:
             return state;
     }
