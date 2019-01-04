@@ -8,7 +8,9 @@ export const getRandomQuote = (obj) => {
     return quote;
 };
 
+export const getNextQuote = (quote) =>{
 
+}
 /*
 let quotesLenght = qoutes.length;
 const colors = [

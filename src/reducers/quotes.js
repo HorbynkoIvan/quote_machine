@@ -5,18 +5,21 @@ const initialStates = {
     quote: '',
     author: ''
 };
+let quote;
 
 export default (state = initialStates, action) => {
     switch (action.type) {
         case FETCH_QUOTES_SUCCESS:
-            let quote = getRandomQuote(action.payload);
+            const data = action.payload;
+            quote = getRandomQuote(action.payload);
             return {...state, ...quote};
         /*  let temp = {...state, quotes: action.payload}
           return temp.quotes;*/
         //return Object.assign(state, action.payload);
         case SET_NEXT_QUOTE:
             debugger
-            console.log('nextaction')
+            quote = getRandomQuote(action.payload);
+            return {...state, ...quote};
         default:
             return state;
     }
