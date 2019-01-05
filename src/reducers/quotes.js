@@ -17,7 +17,6 @@ export default (state = initialStates, action) => {
           return temp.quotes;*/
         //return Object.assign(state, action.payload);
         case SET_NEXT_QUOTE:
-            debugger
             quote = getRandomQuote(action.payload);
             setColor()
             return {...state, ...quote};
