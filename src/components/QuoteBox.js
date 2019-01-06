@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import '../scss/qouteBox.scss';
-import {getRandomQuote} from "../API/functions";
-import {setNextQuote} from "../actions";
 class QuoteBox extends Component {
     render() {
         //debugger

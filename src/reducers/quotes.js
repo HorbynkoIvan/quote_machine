@@ -10,7 +10,6 @@ let quote;
 export default (state = initialStates, action) => {
     switch (action.type) {
         case FETCH_QUOTES_SUCCESS:
-            const data = action.payload;
             quote = getRandomQuote(action.payload);
             return {...state, ...quote};
         /*  let temp = {...state, quotes: action.payload}
