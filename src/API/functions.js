@@ -14,6 +14,7 @@ export const getRandomQuote = (obj) => {
 export const setColor = () => {
     let randomColor = Math.floor(Math.random() * colors.length);
     let wrapper = document.querySelector('#wrapper');
+    let btn = document.querySelector('#new-quote');
     let text = document.querySelector('.quote-text');
     let author = document.querySelector('.quote-author');
 
@@ -21,5 +22,7 @@ export const setColor = () => {
     console.log(colors[randomColor])
     text.style.color = colors[randomColor];
     author.style.color = colors[randomColor];
+    btn.style.borderColor = colors[randomColor];
+    btn.style.color = colors[randomColor];
 }
 
