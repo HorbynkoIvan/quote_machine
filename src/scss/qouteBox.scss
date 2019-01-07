@@ -32,30 +32,29 @@
     display: flex;
     margin-top: 80px;
 
-    #tweet-quote {
-      font-size: 35px;
-    }
-
-    #tumblr-quote {
-      margin-left: 30px;
-      font-size: 35px;
-    }
-
-    #new-quote {
+    .button {
       font-family: 'Raleway', sans-serif;
-      margin-left: auto;
-      //width: 100px;
-      // height: 40px;
-      background: #ffffff;
       display: inline-block;
-      border: 2px solid;
+      border: none;
       color: #ffffff;
-      padding: 16px 32px;
-      font-size: 16px;
       transition: 0.4s;
       cursor: pointer;
-      &:hover{
 
+      &#tweet-quote {
+        font-size: 35px;
+      }
+
+      &#tumblr-quote {
+        margin-left: 30px;
+        font-size: 35px;
+      }
+
+      &#new-quote {
+        background: #ffffff;
+        margin-left: auto;
+        padding: 16px 32px;
+        font-size: 16px;
+        border: 2px solid;
       }
     }
   }

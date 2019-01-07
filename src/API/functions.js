@@ -14,15 +14,20 @@ export const getRandomQuote = (obj) => {
 export const setColor = () => {
     let randomColor = Math.floor(Math.random() * colors.length);
     let wrapper = document.querySelector('#wrapper');
-    let btn = document.querySelector('#new-quote');
+    let btnNew = document.querySelector('#new-quote');
+    let btnTweet = document.querySelector('#tweet-quote');
+    let btnTumblr = document.querySelector('#tumblr-quote');
     let text = document.querySelector('.quote-text');
     let author = document.querySelector('.quote-author');
 
     wrapper.style.backgroundColor = colors[randomColor];
-    console.log(colors[randomColor])
     text.style.color = colors[randomColor];
     author.style.color = colors[randomColor];
-    btn.style.borderColor = colors[randomColor];
-    btn.style.color = colors[randomColor];
+    btnNew.style.borderColor = colors[randomColor];
+    btnNew.style.color = colors[randomColor];
+
+    btnTweet.style.color = colors[randomColor];
+
+    btnTumblr.style.color = colors[randomColor];
 }
 
