@@ -1,5 +1,12 @@
-import {FETCH_QUOTES_START, FETCH_QUOTES_SUCCESS, FETCH_QUOTES_FAILURE, SET_NEXT_QUOTE} from "../actionTypes";
-import {getRandomQuote, setColor} from "../API/functions";
+import {
+    FETCH_QUOTES_START,
+    FETCH_QUOTES_SUCCESS,
+    FETCH_QUOTES_FAILURE,
+    SET_NEXT_QUOTE,
+    TWEET_QUOTE,
+    TUMBLR_QUOTE
+} from "../actionTypes";
+import {getRandomQuote, setColor, tweetQuote, tumblrQuote} from "../API/functions";
 
 const initialStates = {
     quote: '',
@@ -20,6 +27,14 @@ export default (state = initialStates, action) => {
             quote = getRandomQuote(action.payload);
             setColor();
             return {...state, ...quote};
+        case TWEET_QUOTE:
+            debugger
+            tweetQuote(quote.quote, quote.author);
+            return;
+        case TUMBLR_QUOTE:
+            debugger
+            tumblrQuote(quote.quote, quote.author);
+            return;
         default:
             return state;
     }
