@@ -31,16 +31,15 @@ export const setNextQuote = () => {
     return (dispatch) => {
         dispatch({type: SET_NEXT_QUOTE, payload: data1})
     }
-}
+};
 
 export const tweetQuoteAction = () => {
-    debugger
     return (dispatch) => {
         dispatch({type: TWEET_QUOTE})
     }
-}
+};
 export const tumblrQuoteAction = () => {
     return (dispatch) => {
         dispatch({type: TUMBLR_QUOTE})
     }
-}
+};
