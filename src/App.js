@@ -37,7 +37,10 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-    fetchQuotes, setNextQuote, tweetQuoteAction, tumblrQuoteAction
+    fetchQuotes,
+    setNextQuote,
+    tweetQuoteAction,
+    tumblrQuoteAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
