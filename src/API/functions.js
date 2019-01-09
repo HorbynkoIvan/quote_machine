@@ -1,8 +1,7 @@
 const colors = [
     '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50', '#00bfa5', '#00c853', '#64dd17', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
 ];
-let currentQuote = '';
-let currentAuthor = '';
+
 export const getRandomQuote = (obj) => {
     //debugger
     let quotesLength = obj.quotes.length;
@@ -46,9 +45,9 @@ function openURL(url) {
 
 export const tweetQuote = (currentQuote, currentAuthor) => {
     let tweet = document.querySelector("#tweet-quote");
-    debugger
     tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
-    tweet.addEventListener('click', function () {
+    tweet.addEventListener('click', function (e) {
+        e.preventDefault()
         if (!inIframe()) {
             openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
         }

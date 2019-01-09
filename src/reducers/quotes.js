@@ -28,9 +28,11 @@ export default (state = initialStates, action) => {
             setColor();
             return {...state, ...quote};
         case TWEET_QUOTE:
-            return tweetQuote(quote.quote, quote.author);
+            tweetQuote(quote.quote, quote.author);
+            return state;
         case TUMBLR_QUOTE:
-            return tumblrQuote(quote.quote, quote.author);
+            tumblrQuote(quote.quote, quote.author);
+            return state;
         default:
             return state;
     }

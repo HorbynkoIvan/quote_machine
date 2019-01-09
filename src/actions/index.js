@@ -38,6 +38,7 @@ export const tweetQuoteAction = () => {
         dispatch({type: TWEET_QUOTE})
     }
 };
+
 export const tumblrQuoteAction = () => {
     return (dispatch) => {
         dispatch({type: TUMBLR_QUOTE})
