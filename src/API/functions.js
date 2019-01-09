@@ -7,6 +7,12 @@ export const getRandomQuote = (obj) => {
     let quotesLength = obj.quotes.length;
     let randomIndex = Math.floor(Math.random() * quotesLength);
     let quote = obj.quotes[randomIndex];
+    const tweet = document.querySelector("#tweet-quote");
+    const tumblr = document.querySelector("#tumblr-quote");
+    if (tweet && tumblr) {
+        tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + quote.quote + '" ' + quote.author));
+        tumblr.setAttribute('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(quote.author) + '&content=' + encodeURIComponent(quote.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button')
+    }
     return quote;
 };
 
@@ -44,10 +50,8 @@ function openURL(url) {
 }
 
 export const tweetQuote = (currentQuote, currentAuthor) => {
-    let tweet = document.querySelector("#tweet-quote");
-    tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+    const tweet = document.querySelector("#tweet-quote");
     tweet.addEventListener('click', function (e) {
-        e.preventDefault()
         if (!inIframe()) {
             openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
         }
@@ -55,8 +59,7 @@ export const tweetQuote = (currentQuote, currentAuthor) => {
 };
 
 export const tumblrQuote = (currentQuote, currentAuthor) => {
-    let tumblr = document.querySelector("#tumblr-quote");
-    tumblr.setAttribute('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(currentAuthor) + '&content=' + encodeURIComponent(currentQuote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button')
+    const tumblr = document.querySelector("#tumblr-quote");
     tumblr.addEventListener('click', function () {
         if (!inIframe()) {
             openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
