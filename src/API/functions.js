@@ -3,8 +3,8 @@ const colors = [
 ];
 
 export const getRandomQuote = (obj) => {
-    //debugger
     let quotesLength = obj.quotes.length;
+    debugger
     let randomIndex = Math.floor(Math.random() * quotesLength);
     let quote = obj.quotes[randomIndex];
     const tweet = document.querySelector("#tweet-quote");

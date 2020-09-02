@@ -15,7 +15,6 @@ export const fetchQuotes = () => {
         dispatch({type: FETCH_QUOTES_START});
         axios.get(URL)
             .then(response => {
-                console.log(response.data);
                 data1 = response.data;
                 return dispatch({type: FETCH_QUOTES_SUCCESS, payload: response.data});
             }).catch((error) => {
