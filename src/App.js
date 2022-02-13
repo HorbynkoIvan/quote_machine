@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './scss/common.scss';
 
-import QuoteBox from './components/QuoteBox';
+import {QuoteBox} from './components/QuoteBox';
 import {fetchQuotes, setNextQuote, tweetQuoteAction, tumblrQuoteAction} from "./actions";
 
 //import {getRandomQuote} from "./API/functions";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentWillMount() {
         this.props.fetchQuotes()
@@ -21,7 +18,7 @@ class App extends Component {
         return (
             <div id="wrapper">
                 <QuoteBox
-                    fetched={this.props.quotes}
+                    quotes={this.props.quotes}
                     setNextQuote={this.props.setNextQuote}
                     tweetQuoteAction={this.props.tweetQuoteAction}
                     tumblrQuoteAction={this.props.tumblrQuoteAction}/>
