@@ -1,31 +1,29 @@
 import '../../scss/qouteBox.scss';
 
-export const QuoteBox = ({tweetQuoteAction, tumblrQuoteAction, setNextQuote, quotes})=>{
+export const QuoteBox = ({tweetQuoteAction, tumblrQuoteAction, setNextQuote, quotes: {author, quote}})=>{
     return (
         <div id="quote-box">
             <div className="quote-text">
-                <i className="fa fa-quote-left"> </i><span id="text">{quotes.quote}</span>
+                <i className="fa fa-quote-left"> </i><span id="text">{quote}</span>
             </div>
             <div className="quote-author">
-                - <span id="author">{quotes.author}</span>
+                - <span id="author">{author}</span>
             </div>
             <div className="buttons">
-                <a className="button"
+                <button className="button"
                    id="tweet-quote"
                    title="Tweet this quote!"
-                   target="_blank"
                    onClick={tweetQuoteAction}
                 >
                     <i className="fa fa-twitter"></i>
-                </a>
-                <a className="button"
+                </button>
+                <button className="button"
                    id="tumblr-quote"
                    title="Post this quote on tumblr!"
-                   target="_blank"
                    onClick={tumblrQuoteAction}
                 >
                     <i className="fa fa-tumblr"></i>
-                </a>
+                </button>
                 <button className="button" id="new-quote" onClick={setNextQuote}>New quote</button>
             </div>
         </div>

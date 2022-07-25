@@ -4,7 +4,6 @@ const colors = [
 
 export const getRandomQuote = (obj) => {
     let quotesLength = obj.quotes.length;
-    debugger
     let randomIndex = Math.floor(Math.random() * quotesLength);
     let quote = obj.quotes[randomIndex];
     const tweet = document.querySelector("#tweet-quote");
@@ -50,19 +49,13 @@ function openURL(url) {
 }
 
 export const tweetQuote = (currentQuote, currentAuthor) => {
-    const tweet = document.querySelector("#tweet-quote");
-    tweet.addEventListener('click', function (e) {
-        if (!inIframe()) {
-            openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
-        }
-    })
+    if (!inIframe()) {
+        openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+    }
 };
 
 export const tumblrQuote = (currentQuote, currentAuthor) => {
-    const tumblr = document.querySelector("#tumblr-quote");
-    tumblr.addEventListener('click', function () {
-        if (!inIframe()) {
-            openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
-        }
-    })
+    if (!inIframe()) {
+        openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+    }
 };

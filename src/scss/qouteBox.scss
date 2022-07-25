@@ -34,20 +34,20 @@
     margin-top: 80px;
 
     .button {
-      font-family: 'Raleway', sans-serif;
-      display: inline-block;
       border: none;
       color: #ffffff;
       transition: 0.4s;
       cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      background: transparent;
 
       &#tweet-quote {
         font-size: 35px;
       }
 
       &#tumblr-quote {
-        margin-left: 30px;
         font-size: 35px;
+        margin-left: 35px;
       }
 
       &#new-quote {
