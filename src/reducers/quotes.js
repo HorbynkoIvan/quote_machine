@@ -8,6 +8,7 @@ import {
 import {getRandomQuote, setColor, tweetQuote, tumblrQuote} from "../helpers/helpers";
 
 const initialStates = {
+    quotes: [],
     quote: '',
     author: ''
 };
@@ -18,9 +19,9 @@ export default (state = initialStates, {type, payload}) => {
         case FETCH_QUOTES_SUCCESS:
             quote = getRandomQuote(payload);
             setColor();
-            return {...state, ...quote};
+            return {...state, ...payload, ...quote};
         case SET_NEXT_QUOTE:
-            quote = getRandomQuote(payload);
+            quote = getRandomQuote(state);
             setColor();
             return {...state, ...quote};
         case TWEET_QUOTE:
