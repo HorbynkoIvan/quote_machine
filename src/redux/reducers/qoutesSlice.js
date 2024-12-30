@@ -15,11 +15,15 @@ export const quotesSlice = createSlice({
     initialState,
     reducers: {
         setQuotes: (state, action) => {
-            state.quotes = action.payload.quotes;
+            state.quotes = action.payload.quotes || [];
         },
         setRandomQuote: (state) => {
-            const randomIndex = getRandomIndex(state.quotes);
-            state.currentQuote = state.quotes[randomIndex] || {quote: 'No quote available', author: ''};
+            if (state.quotes.length > 0) {
+                const randomIndex = getRandomIndex(state.quotes);
+                state.currentQuote = state.quotes[randomIndex];
+            } else {
+                state.currentQuote = { quote: 'No quotes available', author: '' };
+            }
         },
         setRandomColor: (state) => {
             const randomIndex = getRandomIndex(colors);

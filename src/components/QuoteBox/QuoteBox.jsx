@@ -1,43 +1,19 @@
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {
-    setQuotes, setRandomQuote,
+    setRandomQuote,
     tweetQuoteAction,
     tumblrQuoteAction, setRandomColor
 } from '../../redux/reducers/qoutesSlice';
-
 import '../../scss/qouteBox.scss';
-import axios from "axios";
-
-const fetchQuotesFromAPI = async () => {
-    const URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
-    const response = await axios.get(URL);
-    return response.data;
-}
-
-export const fetchQuotes = () => async (dispatch) => {
-    console.log('2')
-    try {
-        const responseQuotes = await fetchQuotesFromAPI();
-        dispatch(setQuotes(responseQuotes));
-        dispatch(setRandomQuote());
-    } catch (error) {
-        throw (error)
-    }
-};
+import {fetchQuotes} from "../../helpers/helpers";
 
 export const QuoteBox = () => {
     const {currentQuote} = useSelector((state) => state.quotes);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // Fetch quotes on initial load
-        axios.get('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json') // Replace with your API
-            .then((response) => {
-                dispatch(setQuotes(response.data));
-                dispatch(setRandomQuote());
-            })
-            .catch((error) => console.error('Error fetching quotes:', error));
+        dispatch(fetchQuotes())
     }, [dispatch])
 
     const handleNewQuote = () => {

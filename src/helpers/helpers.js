@@ -1,15 +1,31 @@
+import axios from "axios";
+import {setQuotes, setRandomQuote} from "../redux/reducers/qoutesSlice";
+
 export const colors = [
     '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50', '#00bfa5', '#00c853', '#64dd17', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
 ];
+const QUOTES_URL =
+    'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
+
+const fetchQuotesFromAPI = async () => {
+    const response = await axios.get(QUOTES_URL);
+    return response.data;
+};
+
+export const fetchQuotes = () => async (dispatch) => {
+    try {
+        const quotes = await fetchQuotesFromAPI();
+        dispatch(setQuotes(quotes));
+        dispatch(setRandomQuote());
+    } catch (error) {
+        console.error('Error fetching quotes:', error);
+        dispatch(setQuotes([]));
+    }
+};
 
 export const getRandomIndex = (arr) => {
     return Math.floor(Math.random() * arr.length);
 }
-
-export const getRandomQuote = (quotes) => {
-    const randomIndex = getRandomIndex(quotes);
-    return quotes[randomIndex];
-};
 
 /*export const setColor = () => {
     let randomColor = Math.floor(Math.random() * colors.length);
