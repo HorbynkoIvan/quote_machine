@@ -1,10 +1,9 @@
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {
-    fetchQuotesAction,
-    nextQuoteAction,
+    setQuotes, setRandomQuote,
     tweetQuoteAction,
-    tumblrQuoteAction
+    tumblrQuoteAction, setRandomColor
 } from '../../redux/reducers/qoutesSlice';
 
 import '../../scss/qouteBox.scss';
@@ -17,9 +16,11 @@ const fetchQuotesFromAPI = async () => {
 }
 
 export const fetchQuotes = () => async (dispatch) => {
+    console.log('2')
     try {
         const responseQuotes = await fetchQuotesFromAPI();
-        dispatch(fetchQuotesAction(responseQuotes));
+        dispatch(setQuotes(responseQuotes));
+        dispatch(setRandomQuote());
     } catch (error) {
         throw (error)
     }
@@ -30,8 +31,19 @@ export const QuoteBox = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchQuotes()
+        // Fetch quotes on initial load
+        axios.get('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json') // Replace with your API
+            .then((response) => {
+                dispatch(setQuotes(response.data));
+                dispatch(setRandomQuote());
+            })
+            .catch((error) => console.error('Error fetching quotes:', error));
     }, [dispatch])
+
+    const handleNewQuote = () => {
+        dispatch(setRandomQuote());
+        dispatch(setRandomColor());
+    };
 
     return (
         <div id="quote-box">
@@ -56,7 +68,7 @@ export const QuoteBox = () => {
                 >
                     <i className="fa fa-tumblr"></i>
                 </button>
-                <button className="button" id="new-quote" onClick={nextQuoteAction}>New quote</button>
+                <button className="button" id="new-quote" onClick={handleNewQuote}>New quote</button>
             </div>
         </div>
     );
