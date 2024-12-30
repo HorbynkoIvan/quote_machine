@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {colors, tumblrQuote, tweetQuote} from "../../helpers/helpers";
+import {colors, getRandomIndex, tumblrQuote, tweetQuote} from "../../helpers/helpers";
 
 const initialState = {
     quotes: [],
@@ -18,11 +18,11 @@ export const quotesSlice = createSlice({
             state.quotes = action.payload.quotes;
         },
         setRandomQuote: (state) => {
-            const randomIndex = Math.floor(Math.random() * state.quotes.length);
-            state.currentQuote = state.quotes[randomIndex] || { quote: 'No quote available', author: '' };
+            const randomIndex = getRandomIndex(state.quotes);
+            state.currentQuote = state.quotes[randomIndex] || {quote: 'No quote available', author: ''};
         },
         setRandomColor: (state) => {
-            const randomIndex = Math.floor(Math.random() * colors.length);
+            const randomIndex = getRandomIndex(colors);
             state.color = colors[randomIndex];
         },
         tweetQuoteAction: (state) => {
@@ -34,6 +34,6 @@ export const quotesSlice = createSlice({
     },
 })
 
-export const {setQuotes,setRandomQuote,setRandomColor, tweetQuoteAction, tumblrQuoteAction} = quotesSlice.actions
+export const {setQuotes, setRandomQuote, setRandomColor, tweetQuoteAction, tumblrQuoteAction} = quotesSlice.actions
 
 export default quotesSlice.reducer

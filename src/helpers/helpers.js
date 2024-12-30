@@ -2,7 +2,7 @@ export const colors = [
     '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50', '#00bfa5', '#00c853', '#64dd17', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
 ];
 
-const getRandomIndex = (arr) => {
+export const getRandomIndex = (arr) => {
     return Math.floor(Math.random() * arr.length);
 }
 
@@ -11,21 +11,7 @@ export const getRandomQuote = (quotes) => {
     return quotes[randomIndex];
 };
 
-/*export const getRandomQuote = (obj) => {
-    let quotesLength = obj.quotes.length;
-    let randomIndex = Math.floor(Math.random() * quotesLength);
-    let quote = obj.quotes[randomIndex];
-    const tweet = document.querySelector("#tweet-quote");
-    const tumblr = document.querySelector("#tumblr-quote");
-    if (tweet && tumblr) {
-        tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + quote.quote + '" ' + quote.author));
-        tumblr.setAttribute('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(quote.author) + '&content=' + encodeURIComponent(quote.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button')
-    }
-    return quote;
-};*/
-
-
-export const setColor = () => {
+/*export const setColor = () => {
     let randomColor = Math.floor(Math.random() * colors.length);
     let wrapper = document.querySelector('#wrapper');
     let btnNew = document.querySelector('#new-quote');
@@ -43,7 +29,7 @@ export const setColor = () => {
     btnTweet.style.color = colors[randomColor];
 
     btnTumblr.style.color = colors[randomColor];
-}
+}*/
 
 function inIframe() {
     try {
