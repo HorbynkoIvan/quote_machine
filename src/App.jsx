@@ -1,12 +1,12 @@
 import '@scss/common.scss';
-import { Card} from '@components/quoteBox';
+import {Card} from '@components/quoteBox';
+import {Footer} from "@components/footer";
 
 const App = () => {
     return (
         <div id="wrapper">
             <Card/>
-            <div className="my-link"> by <a href="https://github.com/HorbynkoIvan/quote_machine">DidIvan</a>
-            </div>
+            <Footer/>
         </div>
     );
 }
