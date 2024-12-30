@@ -4,9 +4,9 @@ import {
     setRandomQuote,
     tweetQuoteAction,
     tumblrQuoteAction, setRandomColor
-} from '../../redux/reducers/qoutesSlice';
-import '../../scss/qouteBox.scss';
-import {fetchQuotes} from "../../helpers/helpers";
+} from '@redux/reducers/qoutesSlice';
+import '@scss/qouteBox.scss';
+import {fetchQuotes} from "@helpers/helpers";
 
 export const QuoteBox = () => {
     const {currentQuote} = useSelector((state) => state.quotes);

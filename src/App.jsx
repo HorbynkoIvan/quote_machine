@@ -1,5 +1,5 @@
-import './scss/common.scss';
-import {QuoteBox} from './components/QuoteBox';
+import '@scss/common.scss';
+import {QuoteBox} from '@components/quoteBox';
 
 const App = () => {
     return (
