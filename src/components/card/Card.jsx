@@ -7,6 +7,7 @@ import {Button} from "@components/button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTwitter, faTumblr} from "@fortawesome/free-brands-svg-icons";
 import {faQuoteLeft} from "@fortawesome/free-solid-svg-icons";
+import {Loader} from "@components/loader";
 
 export const Card = () => {
     const {isLoading, error, currentQuote} = useSelector((state) => state.quotes);
@@ -21,7 +22,8 @@ export const Card = () => {
         dispatch(setRandomColor());
     };
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <Loader/>
+    //ToDo create error card
     if (error) return <div>Error</div>
 
     return (
