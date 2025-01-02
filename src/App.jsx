@@ -1,5 +1,5 @@
 import '@scss/common.scss';
-import {Card} from '@components/quoteBox';
+import {Card} from '@components/card';
 import {Footer} from "@components/footer";
 
 const App = () => {

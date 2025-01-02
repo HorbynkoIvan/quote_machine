@@ -39,6 +39,12 @@
   margin-top: 30px;
 }
 
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
 @media only screen and (max-width: 1024px) {
   .card {
     width: 70%;
@@ -58,9 +64,5 @@
   }
 }
 
-.buttons-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-}
+
 

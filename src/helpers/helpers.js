@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setQuotes, setRandomQuote} from "@redux/reducers/qoutesSlice";
+import {setError, setLoading, setQuotes, setRandomQuote} from "@redux/reducers/qoutesSlice";
 
 export const colors = [
     '#e57373', '#f06292', '#b71c1c', '#880e4f', '#9c27b0', '#673ab7', '#4a148c', '#311b92', '#009688', '#4caf50', '#00bfa5', '#00c853', '#64dd17', '#5d4037', '#616161', '#607d8b', '#ff9100', '#ff3d00', '#ff6f00'
@@ -13,13 +13,17 @@ const fetchQuotesFromAPI = async () => {
 };
 
 export const fetchQuotes = () => async (dispatch) => {
+    dispatch(setLoading(true));
     try {
         const quotes = await fetchQuotesFromAPI();
         dispatch(setQuotes(quotes));
         dispatch(setRandomQuote());
+        dispatch(setLoading(false));
     } catch (error) {
         console.error('Error fetching quotes:', error);
+        dispatch(setError(error));
         dispatch(setQuotes([]));
+        dispatch(setLoading(false));
     }
 };
 
