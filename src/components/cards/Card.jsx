@@ -8,7 +8,8 @@ import {faQuoteLeft} from "@fortawesome/free-solid-svg-icons";
 export const Card = ({currentQuote, handleNewQuote}) => (
     <div className="card">
         <div className="content">
-            <div className="quote-text">
+            <div className="quote-text"
+            >
                 <FontAwesomeIcon icon={faQuoteLeft}/><span className="text">{currentQuote.quote}</span>
             </div>
             <div className="quote-author">
@@ -31,7 +32,8 @@ export const Card = ({currentQuote, handleNewQuote}) => (
                     </Button>
                 </div>
 
-                <Button onClick={handleNewQuote}>New quote</Button>
+                <Button
+                    onClick={handleNewQuote}>New quote</Button>
             </div>
         </div>
     </div>

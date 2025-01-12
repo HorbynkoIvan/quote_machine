@@ -4,23 +4,24 @@
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 300ms;
+  background-color: var(--dynamic-color);
+
+  .content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    height: auto;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-
-.card .content {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 30px 20px 20px 20px;
-  height: auto;
-}
 
 .quote-text {
-  color: #8a8686;
+  color: var(--dynamic-color);
 
   .fa-quote-left {
     font-size: 35px;
@@ -35,7 +36,7 @@
 .quote-author {
   display: flex;
   justify-content: flex-end;
-  color: #8a8686;
+  color: var(--dynamic-color);
   margin-top: 30px;
 }
 
@@ -43,6 +44,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+  .button {
+    color: var(--dynamic-color);
+    border-color: var(--dynamic-color);
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -63,6 +68,4 @@
     }
   }
 }
-
-
 

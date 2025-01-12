@@ -8,8 +8,13 @@ import {Loader} from "@components/loader";
 import {Card, ErrorCard} from "@components/cards";
 
 const App = () => {
-    const {isLoading, error, currentQuote} = useSelector((state) => state.quotes);
+    const {isLoading, error, currentQuote, color} = useSelector((state) => state.quotes);
     const dispatch = useDispatch();
+
+    //TODO think about how make better text color when backcolor changing
+    useEffect(() => {
+        document.documentElement.style.setProperty('--dynamic-color', color);
+    }, [color]);
 
     useEffect(() => {
         dispatch(fetchQuotes())

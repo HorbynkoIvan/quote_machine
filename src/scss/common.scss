@@ -1,27 +1,45 @@
 @import url(https://fonts.googleapis.com/css?family=Charm:400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 
-*{
+:root {
+  --dynamic-color: #8a8686;
+}
+
+* {
   padding: 0;
   margin: 0;
   font-family: 'Charm', sans-serif;
+  color: #333;
+  box-sizing: border-box;
 }
 
-#wrapper{
-  //background: url("https://api.thumbr.it/whitenoise-361x370.png?background=4ea6ca00&noise=626262&density=52&opacity=30");
-  //background: #a9a6a6;
+#wrapper {
+  background-color: var(--dynamic-color);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.my-link{
-  margin-top: 30px;
+.footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
 
-  a{
+  a {
     color: #ffffff;
     font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--dynamic-color);
+    }
   }
 }
