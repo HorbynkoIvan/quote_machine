@@ -21,7 +21,7 @@
 
 
 .quote-text {
-  color: var(--dynamic-color);
+  color: var(--dynamic-text-color);
 
   .fa-quote-left {
     font-size: 35px;
@@ -36,7 +36,7 @@
 .quote-author {
   display: flex;
   justify-content: flex-end;
-  color: var(--dynamic-color);
+  color: var(--dynamic-text-color);
   margin-top: 30px;
 }
 
@@ -47,6 +47,9 @@
   .button {
     color: var(--dynamic-color);
     border-color: var(--dynamic-color);
+    svg path{
+      fill: var(--dynamic-color);
+    }
   }
 }
 

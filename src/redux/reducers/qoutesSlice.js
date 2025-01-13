@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {colors, getRandomIndex, tumblrQuote, tweetQuote} from "@helpers/helpers";
+import {colors, getContrastText, getRandomIndex, tumblrQuote, tweetQuote} from "@helpers/helpers";
 
 const initialState = {
     isLoading: false,
@@ -10,6 +10,7 @@ const initialState = {
         author: ''
     },
     color: colors[0],
+    textColor: '#333',
 }
 
 export const quotesSlice = createSlice({
@@ -36,6 +37,7 @@ export const quotesSlice = createSlice({
         setRandomColor: (state) => {
             const randomIndex = getRandomIndex(colors);
             state.color = colors[randomIndex];
+            state.textColor = getContrastText(colors[randomIndex])
         },
         tweetQuoteAction: (state) => {
             tweetQuote(state.currentQuote.quote, state.currentQuote.author);
